@@ -1,6 +1,7 @@
-/*Программа выполняет некоторый набор функций bat-файлов, а именно - копирование, удаление, перемещение, 
+/*Программа выполняет некоторый набор функций bat-файлов, а именно - копирование, удаление, перемещение,
 /переименование и создание файла; создание, а также переименование папки и удаление каталога.*/
-///Ruslan Anisimov
+
+/*Ruslan Anisimov*/
 
 #include <iostream>
 #include <fstream>
@@ -158,26 +159,44 @@ int main()
     Deistvie(); ///Вызываем функцию с выбором действий
     cin >> num; ///Вводим № действия
     system ("cls"); ///Очищаем экран ввода
-    if (num == 1)
-        Copyf1(); ///Если № действия = 1, то вызываем функцию Copyf1()
-    else if (num == 2)
-        Deletef2();
-    else if (num == 3)
-        Movef3();
-    else if (num == 4)
-        Papkaf4();
-    else if (num == 5)
-        Renamef5();
-    else if (num == 6)
-        Rmdirf6();
-    else if (num == 7)
-        Filef7();
-    else
+    switch (num)
     {
-        cout << "Такого действия нет." << endl;
-        system ("pause");
-        system ("cls");
-        main();
+        case 1:
+            {
+                Copyf1(); break;
+            }
+        case 2:
+            {
+                Deletef2(); break;
+            }
+        case 3:
+            {
+                Movef3(); break;
+            }
+        case 4:
+            {
+                Papkaf4(); break;
+            }
+        case 5:
+            {
+                Renamef5(); break;
+            }
+        case 6:
+            {
+                Rmdirf6(); break;
+            }
+        case 7:
+            {
+                Filef7(); break;
+            }
+        default:
+            {
+                cout << "Такого действия нет." << endl;
+                system ("pause");
+                system ("cls");
+                main();
+            }
     }
+
     return 0;
 }
